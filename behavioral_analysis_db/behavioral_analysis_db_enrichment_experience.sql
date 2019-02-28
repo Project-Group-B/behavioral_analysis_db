@@ -54,11 +54,11 @@ CREATE TABLE `enrichment_experience` (
   PRIMARY KEY (`Enrichment_Id`),
   KEY `Enrichment_Animal_idx` (`Enrichment_Animal`),
   KEY `Enrichment_Submittor_idx` (`Enrichment_Submittor`),
-  KEY `Enrichment_Department_idx` (`Enrichment_Department`),
   KEY `Enrichment_Item_idx` (`Enrichment_Item`),
   KEY `Enrichment_Species_idx` (`Enrichment_Species`),
   KEY `Enrichment_Location_idx` (`Enrichment_Location`),
   KEY `Enrichment_ApprovedBy_idx` (`Enrichment_ApprovedBy`),
+  KEY `Enrichment_Department_idx` (`Enrichment_Department`),
   CONSTRAINT `Enrichment_Animal` FOREIGN KEY (`Enrichment_Animal`) REFERENCES `animal` (`Animal_Id`),
   CONSTRAINT `Enrichment_ApprovedBy` FOREIGN KEY (`Enrichment_ApprovedBy`) REFERENCES `user` (`User_Id`),
   CONSTRAINT `Enrichment_Department` FOREIGN KEY (`Enrichment_Department`) REFERENCES `department` (`Department_Id`),
@@ -87,4 +87,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-28 16:39:09
+-- Dump completed on 2019-02-28 17:36:43

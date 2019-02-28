@@ -32,6 +32,7 @@ CREATE TABLE `user` (
   `User_LastName` varchar(45) NOT NULL,
   PRIMARY KEY (`User_Id`),
   UNIQUE KEY `User_Name_UNIQUE` (`User_Name`),
+  KEY `Enrichment_Department_idx` (`User_Department`),
   KEY `User_Department_idx` (`User_Department`),
   CONSTRAINT `User_Department` FOREIGN KEY (`User_Department`) REFERENCES `department` (`Department_Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -55,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-28 16:39:12
+-- Dump completed on 2019-02-28 17:36:45

@@ -40,10 +40,10 @@ CREATE TABLE `incident_report` (
   `Incident_IsResolved` int(11) NOT NULL,
   PRIMARY KEY (`Incident_Id`),
   KEY `Incident_Reporter_idx` (`Incident_Reporter`),
-  KEY `Incident_Department_idx` (`Incident_Department`),
   KEY `Incident_Location_idx` (`Incident_Location`),
   KEY `Incident_Species_idx` (`Incident_Species`),
   KEY `Incident_Animal_idx` (`Incident_Animal`),
+  KEY `Incident_Department_idx` (`Incident_Department`),
   CONSTRAINT `Incident_Animal` FOREIGN KEY (`Incident_Animal`) REFERENCES `animal` (`Animal_Id`),
   CONSTRAINT `Incident_Department` FOREIGN KEY (`Incident_Department`) REFERENCES `department` (`Department_Id`),
   CONSTRAINT `Incident_Location` FOREIGN KEY (`Incident_Location`) REFERENCES `location` (`Location_Id`),
@@ -70,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-28 16:39:06
+-- Dump completed on 2019-02-28 17:36:40

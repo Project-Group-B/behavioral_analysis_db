@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `department`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `department` (
-  `Department_Id` int(11) NOT NULL,
+  `Department_Id` int(11) NOT NULL AUTO_INCREMENT,
   `Department_Name` varchar(50) NOT NULL,
   PRIMARY KEY (`Department_Id`),
   UNIQUE KEY `Department_Name_UNIQUE` (`Department_Name`)
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-28 16:39:13
+-- Dump completed on 2019-02-28 17:36:46
