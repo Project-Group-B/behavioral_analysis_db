@@ -49,7 +49,7 @@ CREATE TABLE `incident_report` (
   CONSTRAINT `Incident_Location` FOREIGN KEY (`Incident_Location`) REFERENCES `location` (`Location_Id`),
   CONSTRAINT `Incident_Reporter` FOREIGN KEY (`Incident_Reporter`) REFERENCES `user` (`User_Id`),
   CONSTRAINT `Incident_Species` FOREIGN KEY (`Incident_Species`) REFERENCES `species` (`Species_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,4 +70,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-28 17:36:40
+-- Dump completed on 2019-03-26 12:39:56

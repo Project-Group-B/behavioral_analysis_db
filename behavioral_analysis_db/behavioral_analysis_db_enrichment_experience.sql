@@ -39,8 +39,8 @@ CREATE TABLE `enrichment_experience` (
   `Enrichment_Frequency` int(11) NOT NULL,
   `Enrichment_LifeStrategies` int(11) NOT NULL,
   `Enrichment_PreviousUse` int(11) NOT NULL,
-  `Enrichment_ExpectedBehavior` varchar(1000) NOT NULL,
-  `Enrichment_SagetyQuestions` int(11) NOT NULL,
+  `Enrichment_Contact` int(11) DEFAULT NULL,
+  `Enrichment_SafetyQuestions` int(11) NOT NULL,
   `Enrichment_RisksHazards` int(11) NOT NULL,
   `Enrichment_Goal` varchar(1000) NOT NULL,
   `Enrichment_Source` varchar(50) NOT NULL,
@@ -66,7 +66,7 @@ CREATE TABLE `enrichment_experience` (
   CONSTRAINT `Enrichment_Location` FOREIGN KEY (`Enrichment_Location`) REFERENCES `location` (`Location_Id`),
   CONSTRAINT `Enrichment_Species` FOREIGN KEY (`Enrichment_Species`) REFERENCES `species` (`Species_Id`),
   CONSTRAINT `Enrichment_Submittor` FOREIGN KEY (`Enrichment_Submittor`) REFERENCES `user` (`User_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,6 +75,7 @@ CREATE TABLE `enrichment_experience` (
 
 LOCK TABLES `enrichment_experience` WRITE;
 /*!40000 ALTER TABLE `enrichment_experience` DISABLE KEYS */;
+INSERT INTO `enrichment_experience` VALUES (4,'1000-01-01 01:00:00','TestEnrichmentName',1,1,2,1,NULL,'TestEnrichmentDesc',1,'TestPresentationMethod','1000-01-01 01:00:00','1000-01-02 12:00:00',2,0,0,0,0,0,'TestEnrichmentGoal','TestEnrichmentSource',3,'TestEnrichmentConstruction',0,'TestInv','TestEnrichmentConcerns',1,0);
 /*!40000 ALTER TABLE `enrichment_experience` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -87,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-28 17:36:43
+-- Dump completed on 2019-03-26 12:40:03

@@ -26,10 +26,9 @@ CREATE TABLE `species` (
   `Species_Id` int(11) NOT NULL AUTO_INCREMENT,
   `Species_Name` varchar(50) NOT NULL,
   `Species_Description` varchar(500) NOT NULL,
-  `Species_IsisNumber` int(11) NOT NULL,
   PRIMARY KEY (`Species_Id`),
   UNIQUE KEY `Species_Name_UNIQUE` (`Species_Name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +37,7 @@ CREATE TABLE `species` (
 
 LOCK TABLES `species` WRITE;
 /*!40000 ALTER TABLE `species` DISABLE KEYS */;
+INSERT INTO `species` VALUES (1,'TestSpeciesName','TestSpeciesDesc');
 /*!40000 ALTER TABLE `species` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-28 17:36:47
+-- Dump completed on 2019-03-26 12:40:01

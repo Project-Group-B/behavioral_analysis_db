@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `item/category`
+-- Table structure for table `taxa`
 --
 
-DROP TABLE IF EXISTS `item/category`;
+DROP TABLE IF EXISTS `taxa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `item/category` (
-  `Item_Id` int(11) NOT NULL,
-  `Category_Id` int(11) NOT NULL,
-  PRIMARY KEY (`Item_Id`,`Category_Id`),
-  KEY `Category_Id_idx` (`Category_Id`),
-  CONSTRAINT `Category_Id` FOREIGN KEY (`Category_Id`) REFERENCES `category` (`Category_Id`),
-  CONSTRAINT `Item_Id` FOREIGN KEY (`Item_Id`) REFERENCES `item` (`Item_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `taxa` (
+  `Taxa_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Taxa_Name` varchar(50) NOT NULL,
+  `Taxa_Description` varchar(1000) NOT NULL,
+  PRIMARY KEY (`Taxa_Id`),
+  UNIQUE KEY `Taxa_Name_UNIQUE` (`Taxa_Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `item/category`
+-- Dumping data for table `taxa`
 --
 
-LOCK TABLES `item/category` WRITE;
-/*!40000 ALTER TABLE `item/category` DISABLE KEYS */;
-INSERT INTO `item/category` VALUES (1,1);
-/*!40000 ALTER TABLE `item/category` ENABLE KEYS */;
+LOCK TABLES `taxa` WRITE;
+/*!40000 ALTER TABLE `taxa` DISABLE KEYS */;
+INSERT INTO `taxa` VALUES (1,'TestTaxaName','TestTaxaDesc');
+/*!40000 ALTER TABLE `taxa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-14  2:22:02
+-- Dump completed on 2019-03-26 12:40:00

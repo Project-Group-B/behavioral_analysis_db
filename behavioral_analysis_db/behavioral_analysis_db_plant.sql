@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `item/species`
+-- Table structure for table `plant`
 --
 
-DROP TABLE IF EXISTS `item/species`;
+DROP TABLE IF EXISTS `plant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `item/species` (
-  `Item_Id` int(11) NOT NULL,
-  `Species_Id` int(11) NOT NULL,
-  PRIMARY KEY (`Item_Id`,`Species_Id`),
-  KEY `Item_Species_idx` (`Species_Id`),
-  CONSTRAINT `Item_IdS` FOREIGN KEY (`Item_Id`) REFERENCES `item` (`Item_Id`),
-  CONSTRAINT `Item_Species` FOREIGN KEY (`Species_Id`) REFERENCES `species` (`Species_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `plant` (
+  `Plant_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Plant_Name` varchar(50) NOT NULL,
+  `Plant_Description` varchar(50) NOT NULL,
+  PRIMARY KEY (`Plant_Id`),
+  UNIQUE KEY `Plant_Name_UNIQUE` (`Plant_Name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `item/species`
+-- Dumping data for table `plant`
 --
 
-LOCK TABLES `item/species` WRITE;
-/*!40000 ALTER TABLE `item/species` DISABLE KEYS */;
-INSERT INTO `item/species` VALUES (1,1);
-/*!40000 ALTER TABLE `item/species` ENABLE KEYS */;
+LOCK TABLES `plant` WRITE;
+/*!40000 ALTER TABLE `plant` DISABLE KEYS */;
+INSERT INTO `plant` VALUES (1,'TestPlantName','TestPlantDescription');
+/*!40000 ALTER TABLE `plant` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-14  2:21:55
+-- Dump completed on 2019-03-26 12:39:57

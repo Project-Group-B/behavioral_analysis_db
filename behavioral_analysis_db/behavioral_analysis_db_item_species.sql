@@ -24,11 +24,11 @@ DROP TABLE IF EXISTS `item/species`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `item/species` (
   `Item_Id` int(11) NOT NULL,
-  `Species_Id` varchar(45) NOT NULL,
+  `Species_Id` int(11) NOT NULL,
   PRIMARY KEY (`Item_Id`,`Species_Id`),
-  KEY `Species_Id_idx` (`Species_Id`),
+  KEY `Item_Species_idx` (`Species_Id`),
   CONSTRAINT `Item_IdS` FOREIGN KEY (`Item_Id`) REFERENCES `item` (`Item_Id`),
-  CONSTRAINT `Species_Id` FOREIGN KEY (`Species_Id`) REFERENCES `species` (`Species_Name`)
+  CONSTRAINT `Item_Species` FOREIGN KEY (`Species_Id`) REFERENCES `species` (`Species_Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,6 +38,7 @@ CREATE TABLE `item/species` (
 
 LOCK TABLES `item/species` WRITE;
 /*!40000 ALTER TABLE `item/species` DISABLE KEYS */;
+INSERT INTO `item/species` VALUES (2,1);
 /*!40000 ALTER TABLE `item/species` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-28 17:36:42
+-- Dump completed on 2019-03-26 12:39:59
