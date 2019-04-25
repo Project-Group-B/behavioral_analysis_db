@@ -19,4 +19,4 @@ DEPLOYMENT SETUP
 3) Ensure SQL connections between the MySQL host machine the back end host machine are allowed on port 3306. 
 4) Insert a default user to associate not yet approved entries with.
   `INSERT INTO user (User_Name,User_Pass,User_Status,User_Department,User_FirstName,User_LastName);`
-  `UPDATE ``behavioral_analysis_db`.`user`` SET ``User_Pass`` = sha2('User_Pass',256) WHERE (``User_Id`` = '0');`
+  `UPDATE ```behavioral_analysis_db```.user``` SET ```User_Pass``` = sha2('User_Pass',256) WHERE (```User_Id``` = '0');`
