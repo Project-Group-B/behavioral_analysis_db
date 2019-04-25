@@ -2,6 +2,7 @@
 The database for the behavioral analysis project for the zoo, by Project Group B, 2019
 
 
+LOCAL SETUP (MYSQL WORKBENCH 8)
 In order to use database:
 
 Download the MySql Server and MySql Workbench:
@@ -13,3 +14,11 @@ On the left side, click Administration -> Management -> Data/Import Restore
 Download the file folder from here
 In server create an empty schema that matches the name "behavioral_analysis_db"
 Choose import from dump folder and browse to where you downloaded this
+
+DEPLOYMENT SETUP
+1) Ensure running SQL 8.0.x or higher. Older versions, especially the default 5.x.x do not have support for some table features/character sets and will not work with this project.
+2) Import the SQL from the repository into your MySQL instance. 
+3) Ensure SQL connections between the MySQL host machine the back end host machine are allowed on port 3306. 
+4) Insert a default user to associate not yet approved entries with.
+  `INSERT INTO user (User_Name,User_Pass,User_Status,User_Department,User_FirstName,User_LastName);`
+  `UPDATE `behavioral_analysis_db`.`user` SET `User_Pass` = sha2('User_Pass',256) WHERE (`User_Id` = '0');`
